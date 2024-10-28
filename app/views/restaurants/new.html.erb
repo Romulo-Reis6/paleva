@@ -1,0 +1,135 @@
+<h1>Novo Restaurante</h1>
+
+<% if @restaurant.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @restaurant do |f| %>
+  
+  <div>
+    <%= f.label :brand_name %>
+    <%= f.text_field :brand_name %>
+  </div>
+
+  <div>
+    <%= f.label :corporate_name %>
+    <%= f.text_field :corporate_name %>
+  </div>
+
+  <div>
+    <%= f.label :cnpj %>
+    <%= f.text_field :cnpj %>
+  </div>
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <p>Hórario de funcionamento, deixe em branco para dia que não abre</p>
+
+  <div>
+    <p>Segunda-Feira</p>
+  <div>
+    <%= f.label :monday_opening, "Abre" %>
+    <%= f.time_field :monday_opening %>
+  </div>
+  <div>
+    <%= f.label :monday_closing, "Fecha" %>
+    <%= f.time_field :monday_closing %>
+  </div>
+  </div>
+
+  <div>
+    <p>Terça-Feira</p>
+    <div>
+      <%= f.label :tuesday_opening, "Abre" %>
+      <%= f.time_field :tuesday_opening %>
+    </div>
+    <div>
+      <%= f.label :tuesday_closing, "Fecha" %>
+      <%= f.time_field :tuesday_closing %>
+    </div>
+  </div>
+
+  <div>
+    <p>Quarta-Feira</p>
+    <div>
+      <%= f.label :wednesday_opening, "Abre" %>
+      <%= f.time_field :wednesday_opening %>
+    </div>
+    <div>
+      <%= f.label :wednesday_closing, "Fecha" %>
+      <%= f.time_field :wednesday_closing %>
+    </div>
+  </div>
+
+  <div>
+    <p>Quinta-Feira</p>
+    <div>
+      <%= f.label :thursday_opening, "Abre" %>
+      <%= f.time_field :thursday_opening %>
+    </div>
+    <div>
+      <%= f.label :thursday_closing, "Fecha" %>
+      <%= f.time_field :thursday_closing %>
+    </div>
+  </div>
+
+  <div>
+    <p>Sexta-Feira</p>
+    <div>
+      <%= f.label :friday_opening, "Abre" %>
+      <%= f.time_field :friday_opening %>
+    </div>
+    <div>
+      <%= f.label :friday_closing, "Fecha" %>
+      <%= f.time_field :friday_closing %>
+    </div>
+  </div>
+
+  <div>
+    <p>Sábado</p>
+    <div>
+      <%= f.label :saturday_opening, "Abre" %>
+      <%= f.time_field :saturday_opening %>
+    </div>
+    <div>
+      <%= f.label :saturday_closing, "Fecha" %>
+      <%= f.time_field :saturday_closing %>
+    </div>
+  </div>
+
+  <div>
+    <p>Domingo</p>
+    <div>
+      <%= f.label :sunday_opening, "Abre" %>
+      <%= f.time_field :sunday_opening %>
+    </div>
+    <div>
+      <%= f.label :sunday_closing, "Fecha" %>
+      <%= f.time_field :sunday_closing %>
+    </div>
+  </div>
+
+
+  <div>
+    <%= f.submit%>
+  </div>
+
+<% end %>
